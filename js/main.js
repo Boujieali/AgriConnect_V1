@@ -1,30 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const signupForm = document.getElementById('signupForm');
-    if (signupForm) {
-        signupForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Handle sign up logic here
-        });
-    }
-
-    const loginForm = document.getElementById('loginForm');
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Handle log in logic here
-        });
-    }
-
-    const addProduceForm = document.getElementById('addProduceForm');
-    if (addProduceForm) {
-        addProduceForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            // Handle add produce logic here
-        });
-    }
-
-    const produceList = document.getElementById('produceList');
-    if (produceList) {
-        // Fetch and display produce items here
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    loadImages();
 });
+
+function loadImages() {
+    const images = [
+        'istockphoto-1419527743-612x612.jpg',
+        'istockphoto-1999195067-612x612.jpg',
+        'istockphoto-1999202199-612x612.jpg',
+        'image4.jpg'
+    ];
+    const carouselContainer = document.getElementById('carousel');
+    images.forEach(image => {
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/${image}`;
+        imgElement.alt = 'Produce image';
+        carouselContainer.appendChild(imgElement);
+    });
+}
